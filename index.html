@@ -61,7 +61,7 @@
             <a class="button is-normal is-rounded resource-link" href="https://github.com/ZihaoLu001/OaP"><span class="icon"><img src="./static/vendor/fontawesome/github.svg" alt=""></span><span>Code</span></a>
           </nav>
           <div class="content tldr-wrap">
-            <p class="tldr"><strong>TL;DR:</strong> A vision-language model refines cost programs in simulation before the robot executes them.</p>
+            <p class="tldr"><strong>TL;DR:</strong> OaP is a framework that integrates the semantic understanding of pretrained VLMs with physics-based MPC to explore open-world manipulation without task-specific training data.</p>
           </div>
         </div>
       </div>
@@ -100,8 +100,7 @@
     <section class="section paper-section" id="abstract" aria-labelledby="abstract-title">
       <h2 class="title is-3 has-text-centered" id="abstract-title">Abstract</h2>
       <div class="content narrow has-text-justified">
-        <p>How can a robot turn an instruction such as “place the eraser on the box” into a sequence of physical interactions? In Objectives as Policies (OaP), a pretrained vision-language model writes an objective program for a shared sampling-based model-predictive controller. Each stage specifies running costs, terminal costs, and conditions for advancing to the next stage.</p>
-        <p>We reconstruct the scene from RGB-D observations and run the program in this digital twin. The model can revise the program using feedback from simulated executions. On the physical robot, the controller follows the fixed program and replans motions from the measured state. We evaluate this approach on four tabletop tasks in simulation and on hardware.</p>
+        <p>Vision-language models (VLMs) have shown strong semantic and spatial reasoning capabilities in 3D environments. Recently, connecting VLMs with model-predictive controllers (MPC) has emerged as a paradigm for combining strong semantic reasoning with physics-based planning. However, connecting these two for contact-rich robotic manipulation requires a task representation that bridges the two and captures how physical interactions can be reasoned by VLMs. In this work, we introduce Objectives as Policies (OaP), a framework that connects a pretrained VLM to a shared sampling-based MPC through an editable objective program. Each program specifies a sequence of stages for completing a task, combining running and terminal costs from a cost library with stage completion conditions. Given a natural-language task instruction and scene observation, we build a simulation-based digital twin through real-to-sim, and the VLM generates an objective program that is executed by the MPC in the simulation. The program is iteratively updated by the VLM based on MPC rollouts, before being deployed in the real world. We evaluate our framework in both simulation and the real world on four tabletop manipulation tasks, and show that it outperforms strong baselines. Additional videos and examples are available on the project website: <a href="https://zihaolu001.github.io/oap-project/">https://zihaolu001.github.io/oap-project/</a></p>
       </div>
     </section>
 
